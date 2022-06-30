@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import ToDoHome from './ToDoHome';
 
 const Home = () => {
     const taskRef = useRef('');
@@ -51,6 +52,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
+            <ToDoHome></ToDoHome>
         </div>
     );
 };
