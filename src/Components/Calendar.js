@@ -5,6 +5,7 @@ import 'react-day-picker/dist/style.css';
 
 const Calendar = () => {
     const [date, setDate] = useState(new Date());
+
     return (
         <div>
             <h1 className='text-center text-2xl font-medium my-4'>Calendar</h1>
