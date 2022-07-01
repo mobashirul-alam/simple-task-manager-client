@@ -22,7 +22,6 @@ const ToDoHome = ({ editTask }) => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.modifiedCount === 1) {
-                        console.log(data)
                         toast('Congratulations! You have completed your task')
                     }
                     if (data.modifiedCount === 0) {
@@ -35,8 +34,8 @@ const ToDoHome = ({ editTask }) => {
     return (
         <div className='mx-2 md:mx-20 lg:mx-40'>
             <h1 className=' text-center text-2xl font-medium mt-4 mb-6'>To Do List</h1>
-            <div class="overflow-x-auto w-full">
-                <table class="w-full table-zebra table-auto">
+            <div className="overflow-x-auto w-full">
+                <table className="w-full table-zebra table-auto">
                     <thead className='bg-base-200'>
                         <tr>
                             <th className='py-3'></th>
@@ -53,13 +52,13 @@ const ToDoHome = ({ editTask }) => {
                                             onClick={() => setCompleted(t._id)}
                                             name="checkComplete"
                                             type="checkbox"
-                                            class="checkbox" />
+                                            className="checkbox" />
                                     </label>
                                 </th>
                                 <td className='py-2'>
-                                    <div class="flex items-center space-x-3">
+                                    <div className="flex items-center space-x-3">
                                         <div>
-                                            <div class="font-medium">
+                                            <div className="font-medium">
                                                 {t.task}
                                             </div>
                                         </div>
@@ -68,7 +67,7 @@ const ToDoHome = ({ editTask }) => {
                                 <th className='py-2'>
                                     <button
                                         onClick={() => editTask(t)}
-                                        class="btn btn-xs">
+                                        className="btn btn-xs">
                                         Edit
                                     </button>
                                 </th>

@@ -4,13 +4,10 @@ import ToDoHome from './ToDoHome';
 const Home = () => {
     const taskRef = useRef('');
     const [idToEdit, setIdToEdit] = useState('');
-    const [taskToEdit, setTaskToEdit] = useState('');
-    console.log(idToEdit, 'id then text', taskToEdit);
-    // taskRef.current.value = taskToEdit;
 
     const handleTaskAdd = (e) => {
         const taskDetail = taskRef.current.value;
-        if (idToEdit) {
+        if (idToEdit && taskDetail) {
             fetch(`http://localhost:5000/editedTasks/${idToEdit}`, {
                 method: 'PUT',
                 headers: {
@@ -24,8 +21,9 @@ const Home = () => {
                         taskRef.current.value = '';
                     }
                 })
-        }
-        else {
+        };
+
+        if (taskDetail) {
             fetch('http://localhost:5000/tasks', {
                 method: 'POST',
                 headers: {
@@ -50,17 +48,15 @@ const Home = () => {
 
     const editTask = (taskToEdit) => {
         const { _id, task } = taskToEdit;
-        console.log('clicked at outside', task);
         taskRef.current.value = task;
-        setTaskToEdit(task);
         setIdToEdit(_id);
     }
 
     return (
         <div className='min-h-screen'>
-            <div class="hero bg-base-100">
-                <div class="hero-content text-center">
-                    <div class="w-[300px] md:w-[500px] lg:w-[700px]">
+            <div className="hero bg-base-100">
+                <div className="hero-content text-center">
+                    <div className="w-[300px] md:w-[500px] lg:w-[700px]">
                         <h1 className='text-2xl font-medium my-4'>Manage Your Task By Intelligence</h1>
                         <div className="form-control">
                             <div className="input-group mx-auto">
