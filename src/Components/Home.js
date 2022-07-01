@@ -23,7 +23,7 @@ const Home = () => {
                 })
         };
 
-        if (taskDetail) {
+        if (taskDetail && !idToEdit) {
             fetch('https://simple-task-manager-seam.herokuapp.com/tasks', {
                 method: 'POST',
                 headers: {
