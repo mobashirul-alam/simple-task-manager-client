@@ -8,7 +8,7 @@ const Home = () => {
     const handleTaskAdd = (e) => {
         const taskDetail = taskRef.current.value;
         if (idToEdit && taskDetail) {
-            fetch(`http://localhost:5000/editedTasks/${idToEdit}`, {
+            fetch(`https://simple-task-manager-seam.herokuapp.com/editedTasks/${idToEdit}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
@@ -24,7 +24,7 @@ const Home = () => {
         };
 
         if (taskDetail) {
-            fetch('http://localhost:5000/tasks', {
+            fetch('https://simple-task-manager-seam.herokuapp.com/tasks', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

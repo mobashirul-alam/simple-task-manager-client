@@ -4,7 +4,7 @@ const CompletedTasks = () => {
     const [completeTasks, setCompleteTasks] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/completedTasks')
+        fetch('https://simple-task-manager-seam.herokuapp.com/completedTasks')
             .then(res => res.json())
             .then(data => setCompleteTasks(data))
     }, []);

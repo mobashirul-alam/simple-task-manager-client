@@ -10,7 +10,7 @@ const ToDoHome = ({ editTask }) => {
 
         if (_id) {
             setChecked(!checked);
-            fetch(`http://localhost:5000/tasks/${_id}`, {
+            fetch(`https://simple-task-manager-seam.herokuapp.com/tasks/${_id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json'
