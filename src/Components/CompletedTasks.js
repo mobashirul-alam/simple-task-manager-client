@@ -10,24 +10,24 @@ const CompletedTasks = () => {
     }, []);
 
     return (
-        <div>
-            <div className='text-center mx-2 md:mx-20 lg:mx-40'>
-                <h1 className='text-2xl font-medium my-4'>Completed Task List</h1>
+        <div className='min-h-screen'>
+            <div className='mx-2 md:mx-20 lg:mx-40'>
+                <h1 className='text-center text-2xl font-medium my-4'>Completed Task List</h1>
                 <div class="overflow-x-auto">
-                    <table class="table table-zebra w-full">
-                        <thead>
+                    <table class="table-zebra table-auto w-full">
+                        <thead className='bg-base-200'>
                             <tr>
-                                <th>ID</th>
-                                <th>Task</th>
-                                <th>State</th>
+                                <th className='py-3'>ID</th>
+                                <th className='py-3'>Task</th>
+                                <th className='py-3'>State</th>
                             </tr>
                         </thead>
                         <tbody>
                             {
                                 completeTasks.map((t) => <tr key={t._id}>
-                                    <th>{t._id}</th>
-                                    <td>{t.task}</td>
-                                    <td>{t.state}</td>
+                                    <th className='font-semibold py-2'>{t._id}</th>
+                                    <td className='py-2'>{t.task}</td>
+                                    <td className='py-2'>{t.state}</td>
                                 </tr>)
                             }
                         </tbody>
