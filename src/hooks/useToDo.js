@@ -7,7 +7,7 @@ const useToDo = () => {
         fetch('https://simple-task-manager-seam.herokuapp.com/tasks')
             .then(res => res.json())
             .then(data => setTasks(data))
-    }, [])
+    }, [tasks])
     return [tasks, setTasks];
 };
 
